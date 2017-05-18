@@ -11,7 +11,7 @@ print("Copying from %s to %s" % (from_file, to_file))
 in_file = open(from_file)
 indata = in_file.read()
 
-#This is how it would be done
+#I think This is how it would be done, although line 29 would have to be changed also
 #indata = open(from_file).read() 
 
 print("The input file is %d bytes long" %len(indata))
