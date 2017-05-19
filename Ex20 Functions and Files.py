@@ -4,11 +4,11 @@ from sys import argv
 
 script, input_file = argv
 
-def print_all(f):
+def print_all(f):       #Prints everything in the file
     print(f.read())
 
 def rewind(f):
-    f.seek(0)
+    f.seek(0)     #seek navigates to a point in the file, but the code works all the same without using this command - see it commented out below
 
 def print_a_line(line_count, f):
     print(line_count, f.readline())
@@ -21,7 +21,7 @@ print_all(current_file)
 
 print("Now let's rewind, kind of like a tape.")
 
-rewind(current_file)
+#rewind(current_file) # why did we use this command when it can be removed and the program still work
 
 print("Let's print three lines:")
 
