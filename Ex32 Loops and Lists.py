@@ -22,10 +22,10 @@ for i in change:
 elements = []
 
 # then use the range function to do 0 to 5 counts
-for i in range(0,6):
+for i in range(0,6): #note that it does not do the 6th counter, need to keep this in mind.
     print(f"Adding {i} to the list.")
     # append is a function that lists understand
-    elements.append(i)
+    elements.append(i)  #append just adds item to a list, note that list has to be defined before invoking this command
 
 # now we can print them out too
 for i in elements:
