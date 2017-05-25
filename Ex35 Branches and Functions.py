@@ -2,7 +2,7 @@
 
 from sys import exit
 
-def gold_room():
+def gold_room():                 #Note that since these are functions, the order makes little difference as long as they are before start()
     print("This room is full of gold. How much do you take?")
 
     choice = input(">")
@@ -25,7 +25,7 @@ def bear_room():
     bear_moved = False
 
     while True:
-        choice = raw_input(">")
+        choice = input(">")
 
         if choice == "take honey":
             dead("The bear looks at you then slaps your face off.")
@@ -55,7 +55,7 @@ def cthulhu_room():
 
 def dead(why):
     print( why, "Good job!")
-    exit(0)
+    exit(0) #Exits program, exit(#) returns an error
 
 def start():
     print("You are in a dark room.")
@@ -71,4 +71,4 @@ def start():
     else: 
         dead("You stumble around the room until you starve.")
 
-start()
+start()         #starts program
