@@ -21,4 +21,5 @@ print(stuff[1])
 print(stuff[-1]) #whoa! fancy
 print(stuff.pop())
 print(' '.join(stuff)) #what? cool!
-print('#'.join(stuff[3:5])) #super stellar!test
+print('#'.join(stuff[3:5])) #super stellar!test change
+print("test")
