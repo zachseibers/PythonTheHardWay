@@ -41,22 +41,22 @@ def convert(snippet, phrase):
 
     for i in range(0, snippet.count("@@@")):
         param_count = random.randint(1,3)
-        param_names.append(', '.join(random.samples(WORDS, param_count)))
+        param_names.append(', '.join(random.samples(str(WORDS), param_count)))
 
     for sentence in snippet, phrase:
         result = sentence[:]
 
         #fake class names
         for word in class_names:
-            result = result.replace("%%%", word, 1)
+            result = result.replace("%%%", word.decode("utf-8"), 1)
 
         #fake other names
         for word in other_names:
-            result = result.replace("***", word, 1)
+            result = result.replace("***", word.decode("utf-8"), 1)
 
         #fake parameter lists
         for word in param_names:
-            result = result.replace("@@@", word, 1)
+            result = result.replace("@@@", word.decode("utf-8"), 1)
 
         results.append(result)
 
@@ -65,14 +65,18 @@ def convert(snippet, phrase):
 # keep going until they hit CTRL-D
 try:
     while True:
-        snippets = PHRASES.keys()
+        for i, item in enumerate(PHRASES.keys()):
+            print(i, "###", item)
+
+        snippets = list(PHRASES.keys())
         random.shuffle(snippets)
 
         for snippet in snippets:
             phrase = PHRASES[snippet]
             question, answer = convert(snippet, phrase)
             if PHRASE_FIRST:
-                question, answer = answer, question
+                question = list(answer)
+                answer = list(question)
             
             print(question)
 
