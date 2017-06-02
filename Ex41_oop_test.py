@@ -1,4 +1,4 @@
-#Ex41 Reading Object Language
+#Ex41 Reading Object Language - Does not run extremely well  :(
 
 import random
 from urllib.request import urlopen
