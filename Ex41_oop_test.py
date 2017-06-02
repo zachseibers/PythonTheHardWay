@@ -48,15 +48,15 @@ def convert(snippet, phrase):
 
         #fake class names
         for word in class_names:
-            result = result.replace("%%%", word.decode("utf-8"), 1)
+            result = result.replace("%%%", word.decode("utf-8"), 1) # Don't know why I need to decoe here, but was necessary
 
         #fake other names
         for word in other_names:
-            result = result.replace("***", word.decode("utf-8"), 1)
+            result = result.replace("***", word.decode("utf-8"), 1) # Don't know why I need to decoe here, but was necessary
 
         #fake parameter lists
         for word in param_names:
-            result = result.replace("@@@", word.decode("utf-8"), 1)
+            result = result.replace("@@@", word.decode("utf-8"), 1) # Don't know why I need to decoe here, but was necessary
 
         results.append(result)
 
@@ -64,11 +64,11 @@ def convert(snippet, phrase):
 
 # keep going until they hit CTRL-D
 try:
-    while True:
-        for i, item in enumerate(PHRASES.keys()):
+    while True:                                         #This is completely different than original
+        for i, item in enumerate(PHRASES.keys()):       # Not fully following why this was necessary, keys() is different bewteen Pyton 2 and 3
             print(i, "###", item)
 
-        snippets = list(PHRASES.keys())
+        snippets = list(PHRASES.keys())             #I got adding list correct on my own, but more changes were necessary
         random.shuffle(snippets)
 
         for snippet in snippets:
